@@ -7,8 +7,6 @@ const checkUrl = require("valid-url");
 router.post("/", async (req, res) => {
   const urlLink = req.body;
   const urlreq = req.protocol + "://" + req.get("host");
-  console.log(urlreq, " || ", req.protocol, " || ", req.get("host"));
-  //console.log(urlreq, " || ", req.protocol, " || ", req.get("host"));
 
   if (!checkUrl.isUri(urlreq) && !checkUrl.isUri(urlLink.longUrl)) {
     return res.status(401).json({ message: "Invalid URL", error: err });
