@@ -14,7 +14,6 @@ router.post("/", async (req, res) => {
   }
 
   const tinyUrl = shortId.generate();
-  //console.log(urlreq, " || ", tinyUrl, " || ", urlLink.longUrl);
 
   try {
     let url = await UrlDB.findOne({ longUrl: urlLink.longUrl });
