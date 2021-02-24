@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
   const urlreq = req.protocol + "://" + req.get("host");
 
   if (!checkUrl.isUri(urlreq) || !checkUrl.isUri(urlLink.longUrl)) {
-    return res.status(401).json({ message: "Invalid URL", error: err });
+    return res.status(401).json({ message: "Invalid URL" });
   }
 
   const tinyUrl = shortId.generate();
